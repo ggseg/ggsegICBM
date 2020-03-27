@@ -1,0 +1,80 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  fig.width = 6,
+  out.width = "100%"
+)
+devtools::load_all(".")
+```
+
+# ggsegICBM
+
+<!-- badges: start -->
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/ggsegICBM?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/ggsegICBM)
+[![Travis build status](https://travis-ci.com/LCBC-UiO/ggsegICBM.svg?branch=master)](https://travis-ci.com/LCBC-UiO/ggsegICBM)
+<!-- badges: end -->
+
+This package contains dataset for plotting the ICBM white tract atlas ggseg and ggseg3d. 
+
+## Installation
+
+You can install the released version of ggsegICBM from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("LCBC-UiO/ggsegICBM")
+```
+
+## Example
+```{r}
+library(ggsegICBM)
+```
+
+<!-- ```{r, fig.height=10} -->
+<!-- library(ggseg) -->
+
+<!-- ggseg(atlas = icbm, mapping = aes(fill = region)) + -->
+<!--   scale_fill_brain("icbm", package = "ggsegICBM") + -->
+<!--   theme(legend.position = "bottom", -->
+<!--         legend.text = element_text(size = 7)) + -->
+<!--   guides(fill = guide_legend(ncol = 2)) -->
+
+<!-- ``` -->
+
+```{r "noneval", eval=FALSE}
+library(ggseg3d)
+
+ggseg3d(atlas = icbm_3d) %>% 
+  add_glassbrain("left") %>% 
+  pan_camera("right lateral")
+```
+
+```{r "orca", include=FALSE}
+library(ggseg3d)
+
+p <- ggseg3d(atlas = icbm_3d) %>%
+  add_glassbrain("left") %>% 
+  pan_camera("right lateral") %>%
+  plotly::add_annotations( text="Screen capture",
+                  legendtitle=TRUE, showarrow=FALSE,
+                  font = list(color = "#000000b4",
+                              family = 'sans serif',
+                              size = 50))
+plotly::orca(p, "man/figures/README-3d-plot.png")
+```
+
+```{r "incl", echo=FALSE}
+knitr::include_graphics("man/figures/README-3d-plot.png")
+```
+
+Please note that the 'ggsegICBM' project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
