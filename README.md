@@ -14,6 +14,10 @@ status](https://travis-ci.com/LCBC-UiO/ggsegICBM.svg?branch=master)](https://tra
 This package contains dataset for plotting the ICBM white tract atlas
 ggseg and ggseg3d.
 
+Mori et al., MRI Atlas of Human White Matter. Elsevier, Amsterdam, The
+Netherlands (2005)
+[pubmed](href%7Bhttps://www.elsevier.com/books/mri-atlas-of-human-white-matter/mori/978-0-444-51741-8)
+
 ## Installation
 
 You can install the released version of ggsegICBM from
