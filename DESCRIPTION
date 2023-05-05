@@ -1,6 +1,6 @@
 Package: ggsegICBM
 Title: ICBM datasets for the ggseg-plotting tool
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(person("Athanasia Mo", "Mowinckel", 
                     email = "a.m.mowinckel@psykologi.uio.no", 
                     role = c("aut", "cre"),
